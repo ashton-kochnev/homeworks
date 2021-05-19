@@ -1,0 +1,14 @@
+.blue {
+    border-bottom: 5px solid blue;
+}
+
+.column {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 120px;
+}
+
+.testSpanError {
+    color: blue;
+}

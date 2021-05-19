@@ -1,0 +1,42 @@
+.wrapper {
+    position: relative;
+    width: 300px;
+    margin: 0 auto 20px;
+}
+.block {
+    max-width: 200px;
+    min-width: 100px;
+    background-color: coral;
+    padding: 10px;
+    position: relative;
+    border-radius: 3px;
+    left: 50px;
+    bottom: -20px;
+    word-wrap: break-word;
+}
+.block:after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: -10px;
+    width: 13px;
+    height: 10px;
+    clip-path: url(#left-droplet);
+    background-color: inherit;
+}
+.time {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+.image{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    border-radius: 100%;
+}
+.message {
+    margin-bottom: 15px;
+}
