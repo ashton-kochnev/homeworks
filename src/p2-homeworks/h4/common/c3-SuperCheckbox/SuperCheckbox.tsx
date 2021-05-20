@@ -4,15 +4,14 @@ import s from './SuperCheckbox.module.css'
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
 
 type SuperCheckboxPropsType = DefaultInputPropsType & {
-    onChangeChecked?: (checked: boolean) => void
-    spanClassName?: string
+    onChangeChecked?: (value: boolean) => void
 }
 
 const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
     {
         type,
         onChange, onChangeChecked,
-        className, spanClassName,
+        className,
         children,
 
         ...restProps
@@ -24,19 +23,21 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
         onChangeChecked && onChangeChecked(e.currentTarget.checked)
     }
 
-    const finalInputClassName = `${s.checkbox} ${className ? className : ''}`
+    const finalInputClassName = `${s.checkbox}`
 
     return (
-        <label>
-            <input
-                type={'checkbox'}
-                onChange={onChangeCallback}
-                className={finalInputClassName}
+        <div>
+            <label>
+                <input
+                    type={'checkbox'}
+                    onChange={onChangeCallback}
+                    className={finalInputClassName}
 
-                {...restProps}
-            />
-            {children && <span className={s.spanClassName}>{children}</span>}
-        </label>
+                    {...restProps}
+                />
+                {children && <span className={s.spanClassName}>{children}</span>}
+            </label>
+        </div>
     )
 }
 
