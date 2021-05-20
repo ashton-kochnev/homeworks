@@ -15,6 +15,11 @@
     color: saddlebrown;
 }
 
+.input:focus {
+    outline: none;
+}
+
+
 .inputBlock {
     display: inline-flex;
     flex-direction: column;

@@ -5,6 +5,8 @@
     height: 250px;
     justify-content: center;
     margin: 0 auto;
+    text-transform: uppercase;
+    color: #0f3d3d;
 }
 
 .block > div {

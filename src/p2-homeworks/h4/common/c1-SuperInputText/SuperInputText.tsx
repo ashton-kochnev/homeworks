@@ -6,15 +6,16 @@ type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElem
 type SuperInputTextPropsType = DefaultInputPropsType & {
     onChangeText?: (value: string) => void
     onEnter?: () => void
-    error?: string
+    error?: string | null
     spanClassName?: string
+    setError?: (value: null) => void
 }
 
 const SuperInputText: React.FC<SuperInputTextPropsType> = (
     {
         type,
         onChange, onChangeText,
-        onKeyPress, onEnter,
+        onKeyPress, onEnter, setError,
         error,
         className, spanClassName,
 
@@ -27,13 +28,13 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         onChangeText && onChangeText(e.currentTarget.value)
     }
     const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) => {
+        setError && setError(null)
         onKeyPress && onKeyPress(e);
 
         onEnter && e.key === 'Enter' && onEnter()
     }
 
-    const finalSpanClassName = `${s.error}`
-    const finalInputClassName = `${s.superInput}`
+    const finalInputClassName = `${error ? s.errorInput : ''} ${s.superInput}`
 
     return (
         <div className={s.block}>
@@ -45,7 +46,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
 
                 {...restProps}
             />
-            {error && <span className={finalSpanClassName}>{error}</span>}
+            {error && <span className={s.error}>{error}</span>}
         </div>
     )
 }
