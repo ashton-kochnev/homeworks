@@ -38,25 +38,25 @@ function HW4() {
 
                 {/*----------------------------------------------------*/}
 
-                <SuperButton>
-                    default
-                </SuperButton>
+                {/*<SuperButton>*/}
+                {/*    default*/}
+                {/*</SuperButton>*/}
 
-                <SuperButton red onClick={showAlert}>
-                    delete
-                </SuperButton>
+                {/*<SuperButton red onClick={showAlert}>*/}
+                {/*    delete*/}
+                {/*</SuperButton>*/}
 
-                <SuperButton disabled>
-                    disabled
-                </SuperButton>
+                {/*<SuperButton disabled>*/}
+                {/*    disabled*/}
+                {/*</SuperButton>*/}
 
-                {/*----------------------------------------------------*/}
+                {/*/!*----------------------------------------------------*!/*/}
 
-                <SuperCheckbox onChangeChecked={setChecked}>
-                    some text
-                </SuperCheckbox>
+                {/*<SuperCheckbox onChangeChecked={setChecked}>*/}
+                {/*    some text*/}
+                {/*</SuperCheckbox>*/}
 
-                <SuperCheckbox checked={checked} onChange={testOnChange}/>
+                {/*<SuperCheckbox checked={checked} onChange={testOnChange}/>*/}
             </div>
 
             <hr/>
